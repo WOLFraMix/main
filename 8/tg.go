@@ -1,4 +1,4 @@
-package main
+package main // ТГ бот который повторяет твои сообщения
 
 import (
 	"context"
@@ -9,23 +9,26 @@ import (
 	tu "github.com/mymmrac/telego/telegoutil"
 )
 
+// ссылка на библиотеку для работы с Telegram Bot API
+// которую можно установить через "go get github.com/mymmrac/telego"
+
 func main() {
-	botToken := "8734711794:AAG1RHwLVeSGRxVcPkVzk1nIWoqm0XUfHio"
+	botToken := "token" // токен можно взять в @BotFather
 
 	bot, err := telego.NewBot(botToken, telego.WithDefaultLogger(true, true))
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
-	}
+	} // создаем нового бота с указанным токеном и включаем логирование
 
 	ctx, cancel := context.WithCancel(context.Background())
-	defer cancel()
+	defer cancel() // создаем контекст для управления жизненным циклом бота
 
 	updates, err := bot.UpdatesViaLongPolling(ctx, nil)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
-	}
+	} // начинаем получать обновления от Telegram с помощью метода long polling
 
 	for update := range updates {
 		if update.Message != nil {
@@ -37,7 +40,8 @@ func main() {
 			})
 			if err != nil {
 				fmt.Println(err)
-			}
+			} // если полученное обновление содержит сообщение
+			// то мы используем метод CopyMessage для отправки этого сообщения обратно
 		}
 	}
 }
