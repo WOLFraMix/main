@@ -13,11 +13,7 @@ import (
 // которую можно установить через "go get github.com/mymmrac/telego"
 
 func main() {
-<<<<<<< HEAD
 	botToken := "token" // токен можно взять в @BotFather
-=======
-	botToken := "token"
->>>>>>> 0c2bfa38ac0e1355fd252a3c547ca29eed2a7e9f
 
 	bot, err := telego.NewBot(botToken, telego.WithDefaultLogger(true, true))
 	if err != nil {
