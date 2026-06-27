@@ -1,0 +1,6 @@
+str := fmt.Sprintf("В городе %s температура %d°C, %s.", city, temp, weather)
+fmt.Println(str)
+
+city (string) — название города.
+temp (int) — температура в городе.
+weather (string) — текущее состояние погоды.

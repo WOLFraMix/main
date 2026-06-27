@@ -1,0 +1,23 @@
+// Вы уже находитесь в функции, переменные priceStr и quantityStr уже для вас созданы
+num, err := strconv.Atoi(quantityStr)
+if err != nil {
+		fmt.Println("Ошибка:", err) // вывод ошибки
+	} else {
+		fmt.Println("Число:", num) // вывод числа
+	}
+num2, err2 := strconv.ParseFloat(priceStr, 64)
+if err != nil {
+		fmt.Println("Ошибка:", err2) // вывод ошибки
+	} else {
+		fmt.Println("Число:", num2) // вывод числа
+	}
+result := float64(num) * num2
+fmt.Printf("%.2f", result)
+
+
+// Вы уже находитесь в функции, переменные priceStr и quantityStr уже для вас созданы
+// БЕЗ ПРОВЕРКИ ОШИБОК В КОДЕ
+num, _ := strconv.Atoi(quantityStr)
+num2, _ := strconv.ParseFloat(priceStr, 64)
+result := float64(num) * num2
+fmt.Printf("%.2f", result)
