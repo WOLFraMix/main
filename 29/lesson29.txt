@@ -1,0 +1,7 @@
+num := 255
+
+fmt.Printf("Запись числа %v в разных системах счисления:\n", num)
+fmt.Printf("Десятичная: %d\n", num)
+fmt.Printf("Двоичная: %b\n", num)
+fmt.Printf("Восьмеричная: %o\n", num)
+fmt.Printf("Шестнадцатеричная: %X\n", num)
