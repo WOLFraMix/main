@@ -1,0 +1,131 @@
+fmt.Scanln() - для чтения строки:
+package main
+
+import (
+    "fmt"
+    "log"
+)
+
+func main() {
+	fmt.Println("Введите текст:")
+	// подготавливаем переменные для ввода
+	var w1, w2, w3 string
+	// ожидаем ввода
+	n, err := fmt.Scanln(&w1, &w2, &w3)
+	// проверяем, не было ли ошибки
+	if err != nil {
+		log.Fatal(err)
+	}
+	// выводим данные
+	fmt.Printf("Количество считанных элементов: %d\n", n)
+	fmt.Printf("Считанная строка: %s %s %s\n", w1, w2, w3)
+}
+
+
+
+fmt.Scan() - для чтения нескольких строк:
+package main
+
+import (
+	"fmt"
+	"log"
+)
+
+func main() {
+	fmt.Println("Введите текст:")
+	// подготавливаем переменные для ввода
+	var w1, w2, w3 string
+	// ожидаем ввода
+	n, err := fmt.Scan(&w1, &w2, &w3)
+	// проверяем, не было ли ошибки
+	if err != nil {
+		log.Fatal(err)
+	}
+	// выводим данные
+	fmt.Printf("Количество считанных элементов: %d\n", n)
+	fmt.Printf("Считанный текст: %s %s %s\n", w1, w2, w3)
+}
+
+
+
+bufio.Reader или bufio.Scanner - для чтения одной строки текста:
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"os"
+)
+
+func main() {
+	fmt.Println("Введите текст:")
+	// создаем читателя, который будет читать из консоли
+	reader := bufio.NewReader(os.Stdin)
+	// читаем до определенного символа включительно (\n - это символ переноса строки)
+	line, err := reader.ReadString('\n')
+	// проверяем, не было ли ошибки
+	if err != nil {
+		log.Fatal(err)
+	}
+	// выводим данные
+	fmt.Printf("Считанная строка: %s\n", line)
+}
+
+
+
+
+Для чтений просто одного символа можно использовать bufio.Reader или fmt.Scanf().
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"os"
+)
+
+func main() {
+	fmt.Println("Введите текст:")
+	// создаем читателя, который будет читать из консоли
+	reader := bufio.NewReader(os.Stdin)
+	// читаем один символ из того, что было введено
+	char, _, err := reader.ReadRune()
+	// проверяем, не было ли ошибки
+	if err != nil {
+		log.Fatal(err)
+	}
+	// выводим результат
+	fmt.Printf("Считанный символ: %c\n", char)
+}
+
+
+
+
+Чтение одного числа
+package main
+
+import (
+	"fmt"
+	"log"
+)
+
+func main() {
+	fmt.Println("Введите число:")
+	// создаем переменную, в которую положим введенное число
+	var number int64
+
+	// читаем ввод пользователя
+	// %d - означает, что ждем целое число
+	// &number - указатель, в какую переменную записывать введенное значение
+	_, err := fmt.Scanf("%d", &number)
+	// либо можно использовать fmt.Scan():
+	// _, err := fmt.Scan(&number)
+
+	// проверяем, не было ли ошибки
+	if err != nil {
+		log.Fatal(err)
+	}
+	// выводим данные
+	fmt.Printf("Считанное число: %d\n", number)
+}
