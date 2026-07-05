@@ -1,0 +1,26 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	fmt.Print("Введите время: ")
+	var time int
+	_, errTime := fmt.Scanf("%d", &time)
+	if errTime != nil || time < 0 || time > 23 {
+		fmt.Printf("Произошла ошибка, ввели: %d\n", time)
+		return
+	}
+
+	switch {
+	case time >= 6 && time < 12:
+		fmt.Printf("Cейчас %d ч. - утро\n", time)
+	case time >= 12 && time < 18:
+		fmt.Printf("Cейчас %d ч. - день\n", time)
+	case time >= 18 && time < 23:
+		fmt.Printf("Cейчас %d ч. - вечер\n", time)
+	case time >= 23 || time < 6:
+		fmt.Printf("Cейчас %d ч. - ночь\n", time)
+	}
+}
