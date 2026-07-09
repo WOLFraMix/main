@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
+	"math/rand/v2"
 )
 
 func main() {
@@ -33,13 +33,15 @@ func getFullLength(str string) (int, int) {
 // generateCompliment returns a randomly selected compliment string for the specified name.
 func generateCompliment(name string) string {
 	// Generate a random integer between 0 and 2
-	num := rand.Intn(3)
+	num := rand.IntN(3)
 	switch num {
 	case 0:
 		return fmt.Sprintf("Ты вызываешь восторг, %s!", name)
 	case 1:
 		return fmt.Sprintf("У тебя потрясающая улыбка, %s!", name)
-	default:
+	case 2:
 		return fmt.Sprintf("Ты вдохновляешь, %s!", name)
+	default:
+		return fmt.Sprintln("Ошибка генерации комплимента")
 	}
 }
