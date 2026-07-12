@@ -1,0 +1,17 @@
+package main
+
+import (
+	"errors"
+	"fmt"
+	"os"
+)
+
+func userProfile(id string) (string, error) {
+	result, err := fetchUserInfo(id)
+	if err != nil {
+		return "", fmt.Errorf("fetch error: %w", err)
+	}
+
+	rub := float64(result) / 100.0
+	return fmt.Sprintf("Пользователь с id %s имеет на счету %.2f руб.", id, rub), nil
+}
