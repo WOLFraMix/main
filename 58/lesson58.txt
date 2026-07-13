@@ -1,0 +1,19 @@
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+func adder(n int) func(x int) int {
+    return func(x int) int {
+        n = n + x
+        return n
+    }
+}
+
+func main() {
+    add := adder(1)
+    fmt.Println(add(2))
+    fmt.Println(add(3))
+}
