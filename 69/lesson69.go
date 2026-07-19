@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	mathutils "lesson69/69/mathutils"
+	mathutils "lesson/69/mathutils"
 )
 
 func main() {
