@@ -8,7 +8,6 @@ func main() {
 			fmt.Printf("i: %d, j: %d\n", i, j)
 		}
 	}
-
 	printTable(5)
 }
 
