@@ -4,7 +4,6 @@ import "fmt"
 
 /* Реализация FizzBuzz на Go */
 func main() {
-	// переменная i определена и инициализирована с помощью :=
 	for i := 1; i <= 100; i++ {
 		if i%15 == 0 {
 			fmt.Println("FizzBuzz")
