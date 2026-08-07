@@ -14,10 +14,13 @@ func main() {
 	slice := make([]int, 5, 10)
 	copy(slice, []int{1, 2, 3, 4, 5})
 	fmt.Println(slice)
+
 	sSlice := slice[2:8] // брать значения можно только в пределах capacity
 	fmt.Println(sSlice)
+
 	sSlice[1] = 333
 	fmt.Println(slice, sSlice)
+
 	sSlice[5] = 100
 	fmt.Println(slice, sSlice)
 
