@@ -8,10 +8,12 @@ import (
 )
 
 func main() {
+	// Ввод
 	reader := bufio.NewReaderSize(os.Stdin, 1<<20)
 	writer := bufio.NewWriterSize(os.Stdout, 1<<20)
 	defer writer.Flush()
 
+	// Проверка правильности ввода
 	readInt := func() (int, error) {
 		line, err := reader.ReadString('\n')
 		if err != nil {
@@ -25,20 +27,20 @@ func main() {
 		return v, nil
 	}
 
+	// Создаем переменные
 	m, _ := readInt()
-
 	/*
-		нужные переменные
+		n, _ := readInt()
 		a, _ := readInt()
 		b, _ := readInt()
 	*/
 
 	/*
-		логика задачи
+		Решение задачи
 	*/
 
-	result := m // результат
+	result := m // Результат
 
-	writer.WriteString(strconv.Itoa(result)) // вывод
+	writer.WriteString(strconv.Itoa(result)) // Вывод
 	writer.WriteByte('\n')
 }
