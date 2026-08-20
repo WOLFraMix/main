@@ -42,8 +42,10 @@ func main() {
 			i = 1
 		}
 	}
+	// Если i = b то результат найден
+	// Возвращаем подсчёт
+	result := count
 
-	writer.WriteString(strconv.Itoa(count))
+	writer.WriteString(strconv.Itoa(result))
 	writer.WriteByte('\n')
-
 }
