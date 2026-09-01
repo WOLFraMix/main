@@ -12,16 +12,19 @@ func bfs(graph map[int][]int, start int) []int {
 	queue := []int{start}
 	// result будет содержать порядок посещения вершин
 	result := []int{}
+
 	for len(queue) > 0 {
 		// Извлекаем первую вершину из очереди
 		currentVertex := queue[0]
 		// Удаляем её из начала очереди
 		queue = queue[1:]
+
 		// Если вершина ещё не была посещена
 		if !visited[currentVertex] {
 			// Добавляем её в результат и отмечаем как посещённую
 			result = append(result, currentVertex)
 			visited[currentVertex] = true
+
 			// Обрабатываем соседей текущей вершины
 			for _, neighbor := range graph[currentVertex] {
 				// Если сосед не был посещён ранее
