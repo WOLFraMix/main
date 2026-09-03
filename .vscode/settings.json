@@ -9,5 +9,15 @@
         "latex",
         "plaintext",
         "go"
-    ]
+    ],
+    "go.useLanguageServer": true,
+    "go.formatTool": "goimports",
+    "go.lintTool": "golangci-lint",
+    "go.lintOnSave": "file",
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "always",
+        }
+    }
 }

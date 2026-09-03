@@ -28,7 +28,7 @@ func (r *Resident) AddYear() {
 }
 
 func (r *Resident) ChangeMarried() {
-	if r.Married == false {
+	if !r.Married {
 		r.Married = true
 		r.Events = append(r.Events, "Свадьба! Ура.")
 	} else {
