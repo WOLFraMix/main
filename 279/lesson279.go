@@ -39,16 +39,3 @@ type Dwight struct{}
 type Darryl struct{}
 type Creed struct{}
 type Toby struct{}
-
-func main() {
-	// Дуайт собирает всех в переговорке
-	suspects := []Suspect{
-		Michael{},
-		Dwight{},
-		Darryl{},
-		Creed{},
-		Toby{},
-	}
-
-	Investigation(suspects)
-}
