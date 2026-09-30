@@ -27,6 +27,7 @@ func main() {
 	fmt.Println(ti * 4)
 
 	timeInfo(now)
+	fmt.Println(FormatDuration(d))
 }
 
 func timeInfo(t time.Time) {
@@ -60,4 +61,23 @@ func timeInfo(t time.Time) {
 
 	fmt.Println()
 	fmt.Println("Unix:", t.Unix())
+}
+
+func FormatDuration(d time.Duration) string {
+	// return d.String()
+
+	seconds := int(d / time.Second)
+
+	if d < 60*time.Second {
+		return fmt.Sprintf("%02d", seconds)
+	}
+	if d < 3600*time.Second {
+		minutes := seconds / 60
+		seconds %= 60
+		return fmt.Sprintf("%02d:%02d", minutes, seconds)
+	}
+	hours := seconds / 3600
+	minutes := (seconds % 3600) / 60
+	seconds %= 60
+	return fmt.Sprintf("%02d:%02d:%02d", hours, minutes, seconds)
 }
